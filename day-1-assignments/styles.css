@@ -72,11 +72,9 @@ label {
 }
 #mult_button {
   left: 9%;
-  display: none;
 }
 #auto_button {
   left: 81%;
-  display: none;
 }
 #reset_button {
     left: 93%;
@@ -90,7 +88,26 @@ label {
   opacity: 0.87;
 }
 @media screen and (max-width: 767px) {
-    .button {
-      left: 40%;
-    }
+.button {
+    left: 41%;
+    width: 20%;
+    height: 12%;
+    line-height: 75px;
+  }
+#mult_button {
+    left: 5%;
+  }
+#auto_button {
+    left: 77%;
+}
+#reset_button {
+    left: 78%;
+}
+label {
+    padding-left: 30%;
+    color: white;
+    font-size: 23px;
+    line-height: 1;
+  }
+
 }
