@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <title>the holy grail</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="app">
+      <div class="header" target="_text">
+
+        Total:<p id="score" target="_text"> 0</p>
+      </div>
+      <div class="body">
+        <div class="left">
+          <label id="llabel">This feature costs 10pts.</label>
+          <div class="button" id="mult_button" data-id="mult" target="_text">
+          *1.2
+        </div>
+      </div>
+        <div class="center">
+          <div class="button enabled" id="add_button" target="_text">
+            +1
+          </div>
+        </div>
+        <div class="right">
+          <label id="rlabel">This feature costs 100pts.</label>
+          <div class="button" id="auto_button" target="_text">
+          +1 auto
+        </div>
+        </div>
+        <div class="button" id="reset_button" target="_text">
+        RESET
+      </div>
+      </div>
+      <div class="footer" target="_text">
+        Made w/ &lt;3 @ FastTrack'D
+      </div>
+    </div>
+  </body>
+</html>

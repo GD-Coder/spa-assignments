@@ -1,0 +1,96 @@
+body {
+  margin: 0px;
+  background-color: #bbb8b8;
+  height: 660px;
+}
+label {
+    line-height: 25;
+    padding-left: 30%;
+    color: white;
+}
+.body {
+  background-color: green;
+  margin: 0px;
+  height: 100%;
+}
+.header {
+  height: 50px;
+  background-color: #ecbfbf;
+  width: 100%;
+  margin: 0px;
+  padding-top: 5px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 50px;
+}
+.disabled {
+  background-color: #bbb8b8;
+}
+.enabled {
+  background-color: white;
+}
+.footer {
+  height: 50px;
+  background-color: #bbb8b8;
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 12px;
+}
+.app {
+  height: 100%;
+}
+.left {
+  width: 30%;
+  height: 100%;
+  background-color: red;
+  display: inline-block;
+  float: left;
+}
+.right {
+  width: 30%;
+  height: 100%;
+  background-color: blue;
+  display: inline-block;
+  float: right;
+}
+.button {
+  background-color: white;
+  text-align: center;
+  z-index: 5;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  position: absolute;
+  left: 45%;
+  top: 43%;
+  line-height: 150px;
+  z-index: 5;
+}
+#score {
+  display: inline;
+}
+#mult_button {
+  left: 9%;
+  display: none;
+}
+#auto_button {
+  left: 81%;
+  display: none;
+}
+#reset_button {
+    left: 93%;
+    top: 0px;
+    height: 55px;
+    width: 80px;
+    line-height: 52px;
+    border-radius: 10%;
+}
+[target=_text] {
+  opacity: 0.87;
+}
+@media screen and (max-width: 767px) {
+    .button {
+      left: 40%;
+    }
+}
