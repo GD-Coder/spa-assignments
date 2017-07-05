@@ -2,11 +2,12 @@ let score = 0
 let stopFlag = 0
 let cookie = localStorage.getItem('score')
 const errorMsg = 'You can\'t use that yet'
-const displayScore = (a) => { return $('#score').html(' ' + a) }
+const displayScore = (a) => {
+checkScore()
+return $('#score').html(' ' + a) }
 const add = () => {
   score++
-  return score
-}
+  return score }
 const addTimed = () => {
   if (stopFlag === 0) {
     displayScore(add())
@@ -14,28 +15,23 @@ const addTimed = () => {
     localStorage.setItem('score', score)
   } else {
     stopFlag = 0
-  }
-}
+  } checkScore() }
 const clearScore = () => {
   localStorage.removeItem('score')
   stopFlag = 1
   score = 0
-  displayScore(score)
-}
+  displayScore(score) }
 const checkScore = () => {
-  if (score > 100) {
+  if (score >= 100) {
     $('#auto_button').fadeIn(300)
-    $('#multi_button').fadeIn(300)
-  } else if (score > 9 && score < 100) {
+  } else if (score >= 10 && score < 100) {
     $('#multi_button').fadeIn(300)
     $('#auto_button').fadeOut(300)
   } else {
     $('#auto_button').fadeOut(300)
     $('#multi_button').fadeOut(300)
-  }
-}
+  } }
 $(document).ready(() => {
-  setTimeout(checkScore, 5000)
   if(cookie !== null) {
     score = cookie
     displayScore(score)
@@ -57,8 +53,6 @@ $(document).ready(() => {
       default:
         displayScore(add())
     }
-    checkScore()
     displayScore(score)
     localStorage.setItem('score', score)
-  })
-})
+  }) })
