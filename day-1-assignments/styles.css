@@ -73,11 +73,9 @@ label {
 }
 #multi_button {
   left: 9%;
-
 }
 #auto_button {
   left: 81%;
-
 }
 #reset_button {
   margin-top: 5px;
@@ -89,6 +87,12 @@ label {
   width: 80px;
   line-height: 45px;
   border-radius: 10%;
+}
+#cost {
+  color: red;
+  font-size: 30px;
+  font-weight: 700;
+  display: none;
 }
 [target=_text] {
   opacity: 0.87;

@@ -35,24 +35,31 @@ $(document).ready(() => {
   if(cookie !== null) {
     score = cookie
     displayScore(score)
-    localStorage.removeItem('score')
   }
   $('.button')
   .click((e) => {
     switch (e.target.id) {
       case 'auto_button':
       score < 100 ? alert(errorMsg) : addTimed()
-        if (score > 100) {score = score - 100 }
+        if (score > 100) {
+          score = score - 100
+          $('#cost').fadeIn(200)
+          $('#cost').html('-100')
+          $('#cost').fadeOut(100)
+        }
         break
       case 'reset_button':
         clearScore()
         break
       case 'multi_button':
       score < 10 ? alert(errorMsg) : score = (score * 1.2) - 10
+      $('#cost').fadeIn(200)
+      $('#cost').html('-10')
+      $('#cost').fadeOut(100)
         break
       default:
         displayScore(add())
     }
-    displayScore(score)
     localStorage.setItem('score', score)
+    displayScore(score)
   }) })
