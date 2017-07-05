@@ -7,6 +7,7 @@ label {
     line-height: 25;
     padding-left: 30%;
     color: white;
+    font-size: 18px;
 }
 .body {
   background-color: green;
@@ -70,19 +71,24 @@ label {
 #score {
   display: inline;
 }
-#mult_button {
+#multi_button {
   left: 9%;
+
 }
 #auto_button {
   left: 81%;
+
 }
 #reset_button {
-    left: 93%;
-    top: 0px;
-    height: 55px;
-    width: 80px;
-    line-height: 52px;
-    border-radius: 10%;
+  margin-top: 5px;
+  background-color: black;
+  color: white;
+  left: 93%;
+  top: 0px;
+  height: 45px;
+  width: 80px;
+  line-height: 45px;
+  border-radius: 10%;
 }
 [target=_text] {
   opacity: 0.87;
@@ -94,7 +100,7 @@ label {
     height: 12%;
     line-height: 75px;
   }
-#mult_button {
+#multi_button {
     left: 5%;
   }
 #auto_button {

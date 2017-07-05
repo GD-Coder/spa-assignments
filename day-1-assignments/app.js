@@ -25,45 +25,40 @@ const clearScore = () => {
 const checkScore = () => {
   if (score > 100) {
     $('#auto_button').fadeIn(300)
-    $('#mult_button').fadeIn(300)
+    $('#multi_button').fadeIn(300)
   } else if (score > 9 && score < 100) {
-    $('#mult_button').fadeIn(300)
+    $('#multi_button').fadeIn(300)
     $('#auto_button').fadeOut(300)
   } else {
     $('#auto_button').fadeOut(300)
-    $('#mult_button').fadeOut(300)
+    $('#multi_button').fadeOut(300)
   }
 }
 $(document).ready(() => {
+  setTimeout(checkScore, 5000)
   if(cookie !== null) {
     score = cookie
     displayScore(score)
-    setTimeout(checkScore, 10000)
+    localStorage.removeItem('score')
   }
   $('.button')
   .click((e) => {
-    let btn = e.target.id
-    switch (btn) {
+    switch (e.target.id) {
+      case 'auto_button':
+      score < 100 ? alert(errorMsg) : addTimed()
+        if (score > 100) {score = score - 100 }
+        break
       case 'reset_button':
         clearScore()
-        displayScore(score)
         break
-      case 'mult_button':
-      score < 10
-      ? alert(errorMsg)
-      : score = (score * 1.2) - 10
-        displayScore(score)
-        break
-      case 'auto_button':
-      score < 100
-      ? alert(errorMsg)
-      : score = score - 100
-        addTimed()
+      case 'multi_button':
+      score < 10 ? alert(errorMsg) : score = (score * 1.2) - 10
         break
       default:
         displayScore(add())
     }
     checkScore()
+    displayScore(score)
     localStorage.setItem('score', score)
   })
 })
