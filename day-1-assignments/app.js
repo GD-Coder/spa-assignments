@@ -1,12 +1,18 @@
 let score = 0
 let stopFlag = 0
+let multiplier = 1.2
+let autoplier = 0
 let cookie = localStorage.getItem('score')
 const errorMsg = 'You can\'t use that yet'
 const displayScore = (a) => {
 checkScore()
 return $('#score').html(' ' + a) }
 const add = () => {
-  score++
+  if (multiplier > 1.2) {
+    score = score + multiplier
+  } else {
+    score++
+  }
   return score }
 const addTimed = () => {
   if (stopFlag === 0) {
@@ -52,7 +58,12 @@ $(document).ready(() => {
         clearScore()
         break
       case 'multi_button':
-      score < 10 ? alert(errorMsg) : score = (score * 1.2) - 10
+      score < 10 ? alert(errorMsg)
+      : score = (score * multiplier) - 10
+      multiplier = multiplier + 0.2
+      $('#add_button').html('+' + multiplier)
+      $('#multi_button').html('+' + multiplier)
+      $('#auto_button').html('+' + multiplier)
       $('#cost').fadeIn(200)
       $('#cost').html('-10')
       $('#cost').fadeOut(100)

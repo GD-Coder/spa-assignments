@@ -1,0 +1,23 @@
+<button
+    data-toggle="tooltip"
+    data-placement="top"
+    title="This feature costs 10pts."
+    class="ft-btn col-md-4"
+    ng-disabled="body.total < 10"
+    ng-click="body.clickMulti()">
+  <h2>+{{0.2 + body.stateMod | number:1}}</h2>
+</button>
+<button
+    class="ft-btn col-md-4"
+    ng-click="body.clickAdd()">
+  <h2>+{{body.amount | number:1}}</h2>
+</button>
+<button
+    data-toggle="tooltip"
+    data-placement="top"
+    title="This feature costs 100pts."
+    class="ft-btn col-md-4"
+    ng-disabled="body.total < 100"
+    ng-click="body.clickAuto()">
+  <h2>+{{body.baseIncrement | number:1}} auto</h2>
+</button>
