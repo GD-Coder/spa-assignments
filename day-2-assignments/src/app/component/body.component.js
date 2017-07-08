@@ -63,10 +63,9 @@ const controller =
       this.service.saveState('points', this.settings.defaultGameSettings.total)
     }
     clickAuto () {
+      this.settings.defaultGameSettings.autoclickers++
       this.service.decrementAuto()
       this.service.auto()
-      this.autoclickers(this.settings.defaultGameSettings.autoclickers++)
-      this.service.saveState('automod', this.settings.defaultGameSettings.autoclickers)
     }
     resetState () {
       this.service.localStorageService.remove('points')

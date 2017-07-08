@@ -64,9 +64,10 @@ export class AppService {
     this.settings.defaultGameSettings.total = val
   }
   auto () {
-    this.$interval(() => {
+    this.$interval(() => {           
       this.settings.defaultGameSettings.total++
-      this.saveState('points', this.points())
+      this.saveState('automod', this.settings.defaultGameSettings.autoclickers)
+      this.saveState('points', this.settings.defaultGameSettings.total)
     }, 1000)
   }
 }
