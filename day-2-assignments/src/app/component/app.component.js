@@ -1,5 +1,5 @@
-import 'app/app.styles'
-import templateUrl from 'app/app.template'
+import 'app/styles/app.styles'
+import templateUrl from 'app/html/app.template'
 
 const controller = class FtAppController {
   constructor ($log) {

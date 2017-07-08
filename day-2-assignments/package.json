@@ -3,6 +3,7 @@
     "start": "webpack-dev-server --hot"
   },
   "standard": {
+    "parser": "babel-eslint",
     "globals": [
       "ng"
     ]
@@ -31,8 +32,10 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "@uirouter/visualizer": "^4.0.0",
     "angular": "^1.6.4",
     "angular-local-storage": "^0.6.0",
+    "angular-ui-router": "next",
     "bootstrap": "3",
     "jquery": "^3.2.1",
     "jsverify": "^0.8.2"

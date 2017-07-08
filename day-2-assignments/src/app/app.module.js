@@ -1,19 +1,34 @@
-import { AppService } from 'app/app.service'
-
-import { ftApp } from 'app/app.component'
-import { ftHeader } from 'app/header.component'
-import { ftBody } from 'app/body.component'
-import { ftLogin } from 'app/login.component'
-
-import { config } from 'app/app.config'
+import ngUirouter from 'angular-ui-router'
 import localStorage from 'angular-local-storage'
 
+import { ftApp } from 'app/component/app.component'
+import { ftHeader } from 'app/component/header.component'
+import { ftGame } from 'app/component/body.component'
+import { ftLogin } from 'app/component/login.component'
+import { ftSettings } from 'app/component/settings.component'
+
+import { AppService } from 'app/app.service'
+import { run } from 'app/app.run'
+import { ftGameSettings } from 'app/constants'
+
+import { config } from 'app/config/app.config'
+import { loginConfig } from 'app/config/login.config'
+import { gameConfig } from 'app/config/game.config'
+import { settingsConfig } from 'app/config/settings.config'
+
 export default ng
-  .module('ft.buttons', [localStorage])
+  .module('ft.buttons', [localStorage,
+    ngUirouter,
+    loginConfig,
+    gameConfig,
+    settingsConfig ])
   .service('appService', AppService)
   .component('ftApp', ftApp)
   .component('ftHeader', ftHeader)
-  .component('ftBody', ftBody)
+  .component('ftGame', ftGame)
   .component('ftLogin', ftLogin)
+  .component('ftSettings', ftSettings)
+  .constant('ftGameSettings', ftGameSettings)
   .config(config)
+  .run(run)
   .name

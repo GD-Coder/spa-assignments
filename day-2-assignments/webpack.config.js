@@ -68,7 +68,8 @@ const resolve = {
   // module scoping rules
   modules: [
     'node_modules',
-    'src'
+    'src',
+    'lib'
   ]
 }
 
