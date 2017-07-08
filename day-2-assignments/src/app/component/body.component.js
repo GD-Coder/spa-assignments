@@ -73,6 +73,11 @@ const controller =
       this.service.localStorageService.remove('automod')
       this.$window.location.reload()
     }
+    logout () {
+      this.service.localStorageService.remove('isAuthenticated')
+      this.settings.userInfo.isAuthenticated = false
+      this.$state.transitionTo('login')
+    }
   }
 
 export const ftGame = {

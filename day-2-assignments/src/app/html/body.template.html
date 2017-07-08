@@ -1,7 +1,8 @@
-<div class ="container veiwbody" height="600px">
+<div class ="container">
 <div class="splashed">
 <h1><span class="total">{{game.settings.defaultGameSettings.total | number:2}}</span> clicks <small>so far</small></h1>
-<button ng-disabled="game.settings.defaultGameSettings.total <= 0" ng-click="game.resetState()" class="reset-btn btn btn-danger">RESET</button>
+<button ng-click="game.logout()" class="logout-btn btn btn-danger">LOGOUT</button>
+<button data-toggle="tooltip" data-placement="top" title="The game is in it's initial state."ng-disabled="game.settings.defaultGameSettings.total <= 0" ng-click="game.resetState()" class="reset-btn btn btn-warning">RESET</button>
 </div>
 <button
     data-toggle="tooltip"

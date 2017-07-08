@@ -3,8 +3,9 @@ import templateUrl from 'app/html/header.template'
 
 const controller =
   class FtHeaderController {
-    constructor ($log, appService) {
+    constructor ($log, appService, ftGameSettings) {
       'ngInject'
+      this.settings = ftGameSettings
       this.service = appService
       $log.log('ft-header is a go')
     }
@@ -16,6 +17,9 @@ const controller =
     }
     updateTotal () {
       return this.service.points
+    }
+    getAuth () {
+      return this.settings.userInfo.isAuthenticated
     }
  }
 export const ftHeader = {

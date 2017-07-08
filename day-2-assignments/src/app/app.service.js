@@ -1,15 +1,4 @@
 export class AppService {
-  amount = 1
-  total = 0
-  automod = 0
-  state = {
-    points: 0,
-    modifier: 0,
-    base: {
-      increment: 1,
-      modifier: 0.2
-    } }
-
   constructor ($interval, localStorageService, $timeout, ftGameSettings) {
     'ngInject'
     this.$interval = $interval
@@ -64,7 +53,7 @@ export class AppService {
     this.settings.defaultGameSettings.total = val
   }
   auto () {
-    this.$interval(() => {           
+    this.$interval(() => {
       this.settings.defaultGameSettings.total++
       this.saveState('automod', this.settings.defaultGameSettings.autoclickers)
       this.saveState('points', this.settings.defaultGameSettings.total)
