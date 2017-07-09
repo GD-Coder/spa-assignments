@@ -3,18 +3,23 @@ import templateUrl from 'app/html/body.template'
 
 const controller =
   class FtGameController {
-    constructor ($log, $state, appService, $window, $location, ftGameSettings, $rootScope) {
+    constructor ($log, $state, appService, $window, $location, ftGameSettings, $rootScope, $timeout, $interval) {
       'ngInject'
+      'ngAnimate'
       this.service = appService
       this.$window = $window
       this.$location = $location
       this.settings = ftGameSettings
       this.$state = $state
+      this.$timeout = $timeout
+      this.settings = ftGameSettings
       $rootScope.$on(this.$location.$routeChangeStart, this.checkAuth())
       $log.log('ft-game is a go')
     }
     checkAuth () {
       if (this.service.localStorageService.get('isAuthenticated') !== null) {
+        let wallp = this.service.localStorageService.get('isAuthenticated')
+        ng.element(document).find('body').css('background-image', wallp)
         this.settings.userInfo.isAuthenticated = true
         this.$state.transitionTo('game')
       }
@@ -58,16 +63,34 @@ const controller =
       this.service.saveState('points', this.settings.defaultGameSettings.total)
     }
     clickMulti () {
+    this.message = this.settings.defaultPointSettings.modifier.cost
+      this.$timeout(() => {
+        this.messageShow = true
+        this.$timeout(() => {
+          this.messageShow = false
+        }, 300)
+      }, 200)
       this.service.multiple()
       this.service.saveState('modifier', this.settings.defaultPointSettings.modifier.amount)
       this.service.saveState('points', this.settings.defaultGameSettings.total)
     }
     clickAuto () {
+      this.message = this.settings.defaultPointSettings.autoclicker.cost
+      this.$timeout(() => {
+        this.messageShow = true
+        this.$timeout(() => {
+          this.messageShow = false
+        }, 300)
+      }, 200)
       this.settings.defaultGameSettings.autoclickers++
       this.service.decrementAuto()
       this.service.auto()
     }
     resetState () {
+      this.settings.defaultPointSettings.modifier.amount = 0.2
+      this.settings.defaultPointSettings.increment = 1
+      this.settings.defaultGameSettings.autoclickers = 0
+      this.settings.defaultGameSettings.modifiers = 0
       this.service.localStorageService.remove('points')
       this.service.localStorageService.remove('modifier')
       this.service.localStorageService.remove('automod')

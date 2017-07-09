@@ -26,7 +26,7 @@ export class AppService {
       // alert(this.mod)
       // alert(this.autom)
       // alert(this.user)
-    }, 1000)
+    }, 500)
   }
   increment () {
     this.settings.defaultGameSettings.total += this.settings.defaultPointSettings.increment

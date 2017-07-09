@@ -21,7 +21,8 @@ export default ng
     ngUirouter,
     loginConfig,
     gameConfig,
-    settingsConfig ])
+    settingsConfig
+  ])
   .service('appService', AppService)
   .component('ftApp', ftApp)
   .component('ftHeader', ftHeader)

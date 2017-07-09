@@ -62,6 +62,10 @@ alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
 
+angular-animate@^1.6.5:
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/angular-animate/-/angular-animate-1.6.5.tgz#3817c75880d05fc899a6c8d4b09d1cc62a71e93a"
+
 angular-local-storage@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/angular-local-storage/-/angular-local-storage-0.6.0.tgz#4dba9772fef752070de5a93e202be886b299c686"

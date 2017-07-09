@@ -10,8 +10,9 @@
 ft-body {
   .ft-body;
 }
-.container {
-
+.cost {
+  font-size: 35px;
+  color: red;
 }
 .reset-btn {
   width: 10%;
@@ -30,14 +31,20 @@ ft-body {
   left: 250px;
 }
 .splashed {
-  background-color: rgba(0, 0, 0, 0.49);
+  background-color: rgba(0, 0, 0, 0.60);
   color: #26ff42;
   padding: 15px;
   text-align: center;
+  text-shadow: 2px 2px 20px black;
 }
 .btn-primary {
     background-color: black !important;
     border-color: white !important;
+}
+.btn-primary:hover {
+  background-color: green !important;
+  border-color: black !important;
+  color: black !important;
 }
 .total {
   font-size: 75px;
@@ -46,4 +53,13 @@ body {
   background-image: url(/images/bg5.jpg);
   background-size: cover;
   background-clip: content-box;
+}
+.message {
+  color: Red;
+  font-size: 60px;
+  font-weight: bold;
+  z-index: 10;
+  position: fixed;
+  left: 45%;
+  top: 20%;
 }

@@ -25,7 +25,8 @@ export const wallpaperSettings = {
   metal: 'url(/images/bg5.jpg)',
   antithesis: 'url(/images/bg4.jpg)',
   blue: 'url(/images/bg6.jpg)',
-  warped: 'url(/images/bg7.jpg)'
+  warped: 'url(/images/bg7.jpg)',
+  current: undefined
 }
 
 export const ftGameSettings = {

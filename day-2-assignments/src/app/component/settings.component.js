@@ -15,6 +15,8 @@ const controller =
     }
     checkAuth () {
       if (this.service.localStorageService.get('isAuthenticated') !== null) {
+        let wallp = this.service.localStorageService.get('isAuthenticated')
+        ng.element(document).find('body').css('background-image', wallp)
         this.settings.userInfo.isAuthenticated = true
         this.$state.transitionTo('settings')
       }
@@ -28,18 +30,23 @@ const controller =
     }
     changeMetal () {
       ng.element(document).find('body').css('background-image', 'url(/images/bg5.jpg)')
+      this.service.localStorageService.set('isAuthenticated', 'url(/images/bg5.jpg)')
     }
     changeAntithesis () {
       ng.element(document).find('body').css('background-image', 'url(/images/bg3.jpg)')
+      this.service.localStorageService.set('isAuthenticated', 'url(/images/bg3.jpg)')
     }
     changeBlue () {
       ng.element(document).find('body').css('background-image', 'url(/images/bg6.jpg)')
+      this.service.localStorageService.set('isAuthenticated', 'url(/images/bg6.jpg)')
     }
     changeWarped () {
       ng.element(document).find('body').css('background-image', 'url(/images/bg7.jpg)')
+      this.service.localStorageService.set('isAuthenticated', 'url(/images/bg7.jpg)')
     }
     changeGrid () {
       ng.element(document).find('body').css('background-image', 'url(/images/bg4.jpg)')
+      this.service.localStorageService.set('isAuthenticated', 'url(/images/bg4.jpg)')
     }
 }
 export const ftSettings = {
