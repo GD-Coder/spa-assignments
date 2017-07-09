@@ -2,7 +2,25 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3 text-center">
 <form>
-  <fieldset class="form-group">
+  <legend class="slabel" class="legend">Wallpaper</legend>
+  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" width="250px">
+    <div class="btn-group" role="group" aria-label="second group">
+      <button type="button" ng-model="this.settings.wallpaperSettings.metal" ng-click="settings.changeMetal()" class="btn btn-secondary" selected>Metal</button>
+      <button type="button" ng-model="this.settings.wallpaperSettings.blue" ng-click="settings.changeBlue()" class="btn btn-secondary">Blue</button>
+      <button type="button" ng-model="this.settings.wallpaperSettings.warped" ng-click="settings.changeWarped()" class="btn btn-secondary">Warped</button>
+      <button type="button" ng-model="this.settings.wallpaperSettings.antithesis" ng-click="settings.changeGrid()" class="btn btn-secondary">Grid</button>
+      <button type="button" ng-model="this.settings.wallpaperSettings.antithesis" ng-click="settings.changeAntithesis()" class="btn btn-secondary">Antithesis</button>
+  </div>
+  </div>
+    <fieldset class="form-group">
+      <legend class="slabel" >Increment</legend>
+      <label class="slabel" for="increment">Amount</label>
+      <input
+        type="number"
+        name="increment"
+        ng-model="settings.settings.defaultPointSettings.increment"
+        class="form-control sbox"
+        >
     <legend class="slabel" >Modifier</legend>
     <label class="slabel" for="modifierAmount">Amount</label>
     <input
@@ -35,19 +53,8 @@
       ng-model="settings.settings.defaultPointSettings.autoclicker.cost"
       class="form-control sbox"
       >
-      <legend class="slabel" class="legend">Wallpaper</legend>
-      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" width="250px">
-        <div class="btn-group" role="group" aria-label="second group">
-          <button type="button" ng-model="this.settings.wallpaperSettings.metal" ng-click="settings.changeMetal()" class="btn btn-secondary" selected>Metal</button>
-          <button type="button" ng-model="this.settings.wallpaperSettings.blue" ng-click="settings.changeBlue()" class="btn btn-secondary">Blue</button>
-          <button type="button" ng-model="this.settings.wallpaperSettings.warped" ng-click="settings.changeWarped()" class="btn btn-secondary">Warped</button>
-          <button type="button" ng-model="this.settings.wallpaperSettings.antithesis" ng-click="settings.changeGrid()" class="btn btn-secondary">Grid</button>
-          <button type="button" ng-model="this.settings.wallpaperSettings.antithesis" ng-click="settings.changeAntithesis()" class="btn btn-secondary">Antithesis</button>
-      </div>
-      </div>
   </fieldset>
 </form>
-
 </div>
 </div>
 </div>

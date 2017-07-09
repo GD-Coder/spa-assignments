@@ -21,12 +21,12 @@ export class AppService {
           this.settings.defaultGameSettings.autoclickers = this.autom
         }
       }
-      for (let i = 0; i < this.autom; i++) { this.auto() }
+    }, 10)
+    for (let i = 0; i < this.autom; i++) { this.auto() }
       // alert(this.points)
       // alert(this.mod)
       // alert(this.autom)
       // alert(this.user)
-    }, 500)
   }
   increment () {
     this.settings.defaultGameSettings.total += this.settings.defaultPointSettings.increment

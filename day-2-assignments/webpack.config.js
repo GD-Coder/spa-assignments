@@ -59,7 +59,8 @@ const resolve = {
   extensions: [
     '.js',
     '.less',
-    '.html'
+    '.html',
+    '.css'
   ],
   // allows absolute module imports (i.e. import 'foo'
   // instead of import './foo') from node_modules
@@ -192,7 +193,8 @@ const devServer = {
   // encounters an error.
   overlay: true,
   // allows for SPA routing without a path  prefix
-  historyApiFallback: true
+  historyApiFallback: true,
+  port: 8181
 }
 
 // the entire configuration must be exported for webpack to

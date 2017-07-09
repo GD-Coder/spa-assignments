@@ -16,11 +16,18 @@ export const defaultGameSettings = {
   autoclickers: 0
 }
 export const userInfo = {
+  name: undefined,
   username: 'admin',
   password: 'admin',
   isAuthenticated: false
 }
-
+export const user = {
+  firstname: undefined,
+  lastname: undefined,
+  password: undefined,
+  username: undefined,
+  email: undefined
+}
 export const wallpaperSettings = {
   metal: 'url(/images/bg5.jpg)',
   antithesis: 'url(/images/bg4.jpg)',
@@ -28,7 +35,6 @@ export const wallpaperSettings = {
   warped: 'url(/images/bg7.jpg)',
   current: undefined
 }
-
 export const ftGameSettings = {
   defaultPointSettings,
   defaultGameSettings,

@@ -9,6 +9,7 @@ const controller = class FtLoginController {
     this.$location = $location
     this.$window = $window
     this.$state = $state
+    this.$http = $http
     $rootScope.$on(this.$location.$routeChangeStart, this.checkAuth())
     $log.log('ft-login is a go')
   }
@@ -25,17 +26,26 @@ const controller = class FtLoginController {
     }
   }
   loginSubmit () {
-    let username = this.settings.userInfo.username
-    let password = this.settings.userInfo.password
-    let user = this.username
-    let pass = this.password
-    if ((username === user && password === pass)) {
-      this.settings.userInfo.isAuthenticated = true
-      this.service.saveState('isAuthenticated', true)
-      this.$state.transitionTo('game')
-    } else {
+    this.$http({
+      method: 'POST',
+      url: 'http://localhost:8080/validate/username/credentials/@' + this.username + '',
+      data: {username: this.username, password: this.password}
+    }).then(this.successCallback = (response) => {
+      if (response.data === true) {
+        this.$http.get('http://localhost:8080/users/@' + this.username + '')
+       .then((response) => {
+         this.settings.userInfo.name = response.data.profile.firstName
+         this.service.saveState('firstName', this.settings.userInfo.name)
+       })
+        this.settings.userInfo.isAuthenticated = true
+        this.service.saveState('isAuthenticated', true)
+        this.$state.transitionTo('game')
+      } else {
+        this.error = 'Username or password are incorrect, please try again.'
+      }
+    }, this.errorCallback = (response) => {
       this.error = 'Username or password are incorrect, please try again.'
-    }
+    })
   }
 }
 export const ftLogin = {

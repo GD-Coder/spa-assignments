@@ -3,7 +3,7 @@ import templateUrl from 'app/html/body.template'
 
 const controller =
   class FtGameController {
-    constructor ($log, $state, appService, $window, $location, ftGameSettings, $rootScope, $timeout, $interval) {
+    constructor ($log, $state, appService, $window, $location, ftGameSettings, $rootScope, $timeout, $interval, $http) {
       'ngInject'
       'ngAnimate'
       this.service = appService
@@ -21,6 +21,7 @@ const controller =
         let wallp = this.service.localStorageService.get('isAuthenticated')
         ng.element(document).find('body').css('background-image', wallp)
         this.settings.userInfo.isAuthenticated = true
+        this.settings.userInfo.name = this.service.localStorageService.get('firstName')
         this.$state.transitionTo('game')
       }
       let userAuthenticated = this.settings.userInfo.isAuthenticated
@@ -28,6 +29,7 @@ const controller =
         this.$state.transitionTo('login')
       }
     }
+
     get total () {
       return this.settings.defaultGameSettings.total
     }
@@ -87,13 +89,14 @@ const controller =
       this.service.auto()
     }
     resetState () {
-      this.settings.defaultPointSettings.modifier.amount = 0.2
-      this.settings.defaultPointSettings.increment = 1
       this.settings.defaultGameSettings.autoclickers = 0
-      this.settings.defaultGameSettings.modifiers = 0
+      this.settings.defaultGameSettings.total = 0
+      this.settings.defaultPointSettings.increment = 1
       this.service.localStorageService.remove('points')
       this.service.localStorageService.remove('modifier')
       this.service.localStorageService.remove('automod')
+      this.settings.defaultPointSettings.modifier.amount = 0.2
+      this.settings.defaultGameSettings.modifiers = 0
       this.$window.location.reload()
     }
     logout () {

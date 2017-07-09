@@ -2,8 +2,9 @@
 </div>
 <div class="col-sm-10 col-sm-offset-1 hid">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3 text-center">
-      <h3 class="slabel">Welcome!</h3>
+    <div class="col-sm-6 col-sm-offset-3 text-center">      
+      <span class="text-danger">{{ login.error }}</span>
+      <h3 class="slabel">WELCOME!</h3><h3>{{login.greeting}}</h3>
         <form ng-submit="login.loginSubmit()" class="form"  >
           <div class="form-group">
           <input type="text" class="form-control sbox" ng-model="login.username" placeholder="username" required=""/>
@@ -14,8 +15,7 @@
           </div>
 
           <div class="form-group">
-          <button type="submit" class="btn btn-success">Login</button></br></br>
-          <span class="text-danger">{{ login.error }}</span>
+          <button type="submit" class="btn btn-success">LOGIN</button></br></br>
           </div>
         </form>
     </div>
