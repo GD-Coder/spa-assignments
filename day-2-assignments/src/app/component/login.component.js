@@ -34,8 +34,8 @@ const controller = class FtLoginController {
       if (response.data === true) {
         this.$http.get('http://localhost:8080/users/@' + this.username + '')
        .then((response) => {
-         this.settings.userInfo.name = response.data.profile.firstName
-         this.service.saveState('firstName', this.settings.userInfo.name)
+         this.settings.user.firstname = response.data.profile.firstName
+         this.service.saveState('firstName', this.settings.user.firstname)
        })
         this.settings.userInfo.isAuthenticated = true
         this.service.saveState('isAuthenticated', true)

@@ -9,7 +9,7 @@ export class AppService {
       this.points = this.localStorageService.get('points')
       this.mod = this.localStorageService.get('modifier')
       this.autom = this.localStorageService.get('automod')
-      this.user = this.localStorageService.get('isAuthenticated')
+      // this.user = this.localStorageService.get('isAuthenticated')
       if (this.points > 0) {
         this.settings.defaultGameSettings.total = this.points
       }
